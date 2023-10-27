@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>SOLID</title>
+
+	<link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+	<div class="rate-widget"></div>
+	<div class="rateSmall-widget"></div>
+	<div class="moon-widget"></div>
+	<div class="moonSmall-widget"></div>
+	<div class="rate-and-moon-widget"></div>
+	<div class="rateue-widget"></div>
+	<div class="rateueSmall-widget"></div>
+	<div class="moon3-widget"></div>
+
+	<script src="js/script.js"></script>
+	<script>
+		let widgets = new WidgetMaker(
+			new Rate('.rate-widget'),
+			new Moon('.moon-widget'),
+			new Rate('.rate-and-moon-widget'),
+			new Moon('.rate-and-moon-widget'),
+			new RateUE('.rateue-widget'),
+			new Moon3('.moon3-widget'),
+		);
+		widgets.render();
+		let widgetsSmall = new WidgetMakerSmall(
+			new Moon('.none', '.moonSmall-widget'),
+			new Rate('.none', '.rateSmall-widget'),
+			new RateUE('.none', '.rateueSmall-widget'),
+		);
+		widgetsSmall.render();
+	</script>
+</body>
+</html>
